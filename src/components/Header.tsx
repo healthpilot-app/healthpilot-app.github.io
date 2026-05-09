@@ -8,6 +8,7 @@ const APP_STORE_URL =
 const NAV_LINKS = [
   { href: "features", label: "Features" },
   { href: "screens", label: "Screens" },
+  { href: "workouts", label: "Workouts" },
   { href: "how", label: "How it works" },
   { href: "privacy", label: "Privacy" },
 ];

@@ -4,6 +4,7 @@ import { Hero } from "./components/Hero";
 import { TrustStrip } from "./components/TrustStrip";
 import { Features } from "./components/Features";
 import { ScreenShowcase } from "./components/ScreenShowcase";
+import { WorkoutsFlyover } from "./components/WorkoutsFlyover";
 import { HowItWorks } from "./components/HowItWorks";
 import { Privacy } from "./components/Privacy";
 import { CTA } from "./components/CTA";
@@ -49,6 +50,7 @@ export default function App() {
       <TrustStrip />
       <Features />
       <ScreenShowcase />
+      <WorkoutsFlyover />
       <HowItWorks />
       <Privacy />
       <CTA />
