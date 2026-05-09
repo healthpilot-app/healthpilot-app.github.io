@@ -9,7 +9,7 @@ export function Footer() {
           <div className="text-center md:text-left">
             <div className="text-sm font-semibold tracking-tight">HealthPilot</div>
             <div className="text-xs text-white/45">
-              © {new Date().getFullYear()} Shanti Informatics · All rights reserved
+              © {new Date().getFullYear()} HealthPilot · All rights reserved
             </div>
           </div>
         </div>

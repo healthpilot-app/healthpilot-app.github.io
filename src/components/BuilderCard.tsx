@@ -1,18 +1,19 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { BrandMark } from "./BrandMark";
+import { CardTilt } from "./effects/CardTilt";
 
 export function BuilderCard() {
   return (
     <section className="relative px-6 pb-4 pt-8 lg:px-10 lg:pb-8">
       <div className="mx-auto max-w-4xl">
+       <CardTilt maxTilt={6} className="rounded-2xl">
         <motion.a
           href="/about.html"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="group relative flex flex-col items-start gap-5 overflow-hidden rounded-2xl border border-white/8 bg-white/[0.03] p-5 transition-all hover:-translate-y-0.5 hover:border-white/15 hover:bg-white/[0.05] sm:flex-row sm:items-center sm:gap-6 sm:p-6"
+          className="group relative flex flex-col items-start gap-5 overflow-hidden rounded-2xl border border-white/8 bg-white/[0.03] p-5 transition-all hover:border-white/15 hover:bg-white/[0.05] sm:flex-row sm:items-center sm:gap-6 sm:p-6"
         >
           {/* Glow on hover */}
           <div
@@ -25,10 +26,15 @@ export function BuilderCard() {
           />
 
           <div className="relative shrink-0">
-            <div className="absolute inset-0 -z-10 rounded-xl bg-violet-600/30 blur-xl" />
-            <div className="rounded-xl border border-white/10 bg-ink-900 p-2">
-              <BrandMark size={40} animate={false} />
-            </div>
+            <div className="absolute inset-0 -z-10 rounded-full bg-violet-600/30 blur-xl" />
+            <img
+              src="/tarun.jpg"
+              alt="Tarun Gupta"
+              loading="lazy"
+              width={56}
+              height={56}
+              className="h-14 w-14 rounded-full border border-white/10 object-cover"
+            />
           </div>
 
           <div className="relative flex-1 min-w-0">
@@ -48,6 +54,7 @@ export function BuilderCard() {
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </div>
         </motion.a>
+       </CardTilt>
       </div>
     </section>
   );

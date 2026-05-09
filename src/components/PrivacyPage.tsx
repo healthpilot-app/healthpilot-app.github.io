@@ -286,8 +286,8 @@ function Intro() {
   return (
     <div className="rounded-2xl border border-violet-400/20 bg-violet-500/5 p-6 text-[16.5px] leading-[1.7] text-white/85">
       This Privacy Policy explains what data HealthPilot ("the app", "we", "us") collects, how it
-      is used, and the choices you have. HealthPilot is published by Shanti Informatics and is
-      available on the Apple App Store. We can be reached at{" "}
+      is used, and the choices you have. HealthPilot is available on the Apple App Store. We can
+      be reached at{" "}
       <Link href="mailto:ai.healthpilot@gmail.com">ai.healthpilot@gmail.com</Link>.
     </div>
   );

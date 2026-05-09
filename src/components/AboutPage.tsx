@@ -9,8 +9,8 @@ import {
   Code2,
   Sparkles,
 } from "lucide-react";
-import { BrandMark } from "./BrandMark";
-
+import { CardTilt } from "./effects/CardTilt";
+import { Spotlight } from "./effects/Spotlight";
 const LINKEDIN_URL = "https://www.linkedin.com/in/tarungupta003/";
 const SUPPORT_EMAIL = "ai.healthpilot@gmail.com";
 
@@ -120,13 +120,22 @@ export function AboutPage() {
           initial="hidden"
           animate="show"
           custom={4}
-          className="mt-10 flex flex-col items-start gap-6 rounded-3xl border border-white/8 bg-white/[0.03] p-6 md:flex-row md:items-center md:p-7"
+          className="mt-10"
+        >
+        <CardTilt maxTilt={6} className="rounded-3xl">
+        <div
+          className="flex flex-col items-start gap-6 rounded-3xl border border-white/8 bg-white/[0.03] p-6 md:flex-row md:items-center md:p-7"
         >
           <div className="relative shrink-0">
-            <div className="absolute inset-0 -z-10 rounded-2xl bg-violet-600/30 blur-2xl" />
-            <div className="rounded-2xl border border-white/10 bg-ink-900 p-3">
-              <BrandMark size={64} animate={false} />
-            </div>
+            <div className="absolute inset-0 -z-10 rounded-full bg-violet-600/30 blur-2xl" />
+            <img
+              src="/tarun.jpg"
+              alt="Tarun Gupta"
+              loading="lazy"
+              width={88}
+              height={88}
+              className="h-[88px] w-[88px] rounded-full border border-white/10 object-cover shadow-lg shadow-violet-900/30"
+            />
           </div>
           <div className="flex-1">
             <div className="text-[18px] font-semibold tracking-tight">Tarun Gupta</div>
@@ -152,6 +161,8 @@ export function AboutPage() {
               </a>
             </div>
           </div>
+        </div>
+        </CardTilt>
         </motion.div>
 
         {/* Story */}
@@ -245,8 +256,9 @@ export function AboutPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="mt-16 rounded-3xl border border-violet-400/20 bg-gradient-to-br from-violet-950/60 via-ink-900/60 to-ink-950/60 p-8 text-center md:p-10"
+          className="mt-16"
         >
+        <Spotlight className="rounded-3xl border border-violet-400/20 bg-gradient-to-br from-violet-950/60 via-ink-900/60 to-ink-950/60 p-8 text-center md:p-10">
           <h3 className="text-[22px] font-semibold tracking-tight md:text-[26px]">
             Got a question, or an idea for the app?
           </h3>
@@ -272,6 +284,7 @@ export function AboutPage() {
               Connect on LinkedIn
             </a>
           </div>
+        </Spotlight>
         </motion.div>
       </div>
     </article>
