@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { BrandMark } from "./BrandMark";
 
 export function BuilderCard() {
   return (
@@ -25,10 +24,15 @@ export function BuilderCard() {
           />
 
           <div className="relative shrink-0">
-            <div className="absolute inset-0 -z-10 rounded-xl bg-violet-600/30 blur-xl" />
-            <div className="rounded-xl border border-white/10 bg-ink-900 p-2">
-              <BrandMark size={40} animate={false} />
-            </div>
+            <div className="absolute inset-0 -z-10 rounded-full bg-violet-600/30 blur-xl" />
+            <img
+              src="/tarun.jpg"
+              alt="Tarun Gupta"
+              loading="lazy"
+              width={56}
+              height={56}
+              className="h-14 w-14 rounded-full border border-white/10 object-cover"
+            />
           </div>
 
           <div className="relative flex-1 min-w-0">
