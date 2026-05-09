@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  HealthPilot brand mark — master SVG.
+
+  Use this as the source of truth for regenerating the icon and splash PNGs.
+  Visual matches src/components/common/BrandMark.tsx (purple gradient tile +
+  3/4 progress arc + heart-pulse line).
+
+  Recommended PNG output sizes:
+    assets/icon.png            1024 x 1024  (transparent background)
+    assets/adaptive-icon.png   1024 x 1024  (foreground only, no padding)
+    assets/splash-icon.png     1242 x 1242  (single colour bg #5B21B6)
+    assets/favicon.png           48 x 48    (transparent background)
+
+  Export from any SVG editor (Figma / Sketch / Affinity / Inkscape) at the
+  sizes above, or use a one-shot CLI like `npx @resvg/resvg-cli` /
+  `rsvg-convert` (Homebrew: `brew install librsvg`):
+
+    rsvg-convert -w 1024 -h 1024 assets/brand-mark.svg -o assets/icon.png
+    rsvg-convert -w 1024 -h 1024 assets/brand-mark.svg -o assets/adaptive-icon.png
+    rsvg-convert -w 1242 -h 1242 assets/brand-mark.svg -o assets/splash-icon.png
+    rsvg-convert -w   48 -h   48 assets/brand-mark.svg -o assets/favicon.png
+
+  After replacing the PNGs, run `npx expo prebuild -p ios` to bake the new
+  icon into the native iOS project, then `npm run ios` to verify.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0"   stop-color="#6D28D9" />
+      <stop offset="0.6" stop-color="#8B5CF6" />
+      <stop offset="1"   stop-color="#A78BFA" />
+    </linearGradient>
+    <radialGradient id="shine" cx="307" cy="256" r="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Rounded square background (radius ≈ 27% of side) -->
+  <rect x="0" y="0" width="1024" height="1024" rx="277" ry="277" fill="url(#bg)" />
+  <rect x="0" y="0" width="1024" height="1024" rx="277" ry="277" fill="url(#shine)" />
+
+  <!--
+    3/4 progress arc — same metaphor as the daily score ring.
+    Arc parameters mirror the BrandMark TSX implementation at size=1024:
+      padding = 164      (~16% of side)
+      arcR    = 348
+      stroke  = 61
+    Sweep starts at 225° and goes clockwise to 135° (a 270° arc).
+  -->
+  <g opacity="0.95" transform="translate(512 512)">
+    <!-- Background ring (faint) -->
+    <path
+      d="M -246 246 A 348 348 0 1 1 246 246"
+      fill="none" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="61" stroke-linecap="round" />
+    <!-- Active arc — fills ~75% of the 270° sweep to suggest progress -->
+    <path
+      d="M -246 246 A 348 348 0 1 1 246 246"
+      fill="none" stroke="#FFFFFF" stroke-width="61" stroke-linecap="round"
+      stroke-dasharray="1230 10000" />
+  </g>
+
+  <!--
+    Heart-pulse waveform across the centre.
+    Width = 0.62 * inner = 0.62 * 696 = ~432 px, centred on the tile.
+    Y-baseline shifted slightly down for optical centring.
+  -->
+  <path
+    d="M 296 532
+       L 374 532
+       L 426 412
+       L 478 644
+       L 530 532
+       L 564 504
+       L 598 532
+       L 728 532"
+    fill="none" stroke="#FFFFFF" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

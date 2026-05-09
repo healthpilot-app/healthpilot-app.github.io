@@ -1,0 +1,19 @@
+node_modules
+dist
+*.log
+.DS_Store
+.vscode
+.idea
+.env
+.env.local
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# Local Claude Code launch config (used by the preview MCP)
+.claude
+
+# Magic MCP — uses ${MAGIC_API_KEY} from your shell env, but ignore in case
+# you ever inline a real key for local debugging.
+.mcp.json
+!.mcp.json.example

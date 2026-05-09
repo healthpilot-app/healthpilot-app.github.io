@@ -1,139 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HealthPilot Privacy Policy</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-           max-width: 760px; margin: 60px auto; padding: 0 24px; line-height: 1.65;
-           color: #1a1a1a; background: #faf7ff; }
-    h1 { font-size: 30px; letter-spacing: -0.5px; }
-    h2 { font-size: 19px; margin-top: 36px; border-bottom: 1px solid #ddd; padding-bottom: 6px; }
-    h3 { font-size: 16px; margin-top: 22px; }
-    .effective { color: #666; font-size: 14px; margin-top: -10px; }
-    code { background: #efeaff; padding: 1px 6px; border-radius: 4px; font-size: 13.5px; }
-    a { color: #7C3AED; }
-    ul { padding-left: 22px; }
-    li { margin-bottom: 6px; }
-    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
-    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e5d9ff; vertical-align: top; }
-    th { background: #efeaff; }
-  </style>
-</head>
-<body>
-
-<h1>HealthPilot — Privacy Policy</h1>
-<p class="effective">Last updated: 9 May 2026</p>
-
-<p>This Privacy Policy explains what data HealthPilot ("the app", "we", "us") collects, how it is used, and the choices you have. HealthPilot is published by Shanti Informatics and is available on the Apple App Store. We can be reached at <a href="mailto:ai.healthpilot@gmail.com">ai.healthpilot@gmail.com</a>.</p>
-
-<h2>1. Summary in plain English</h2>
-<ul>
-  <li>HealthPilot stores your data <strong>on your device</strong>. We operate no servers and do not collect your data ourselves.</li>
-  <li>The AI Coach, Meal Snap, and Document Analysis features send data to a <strong>third-party AI provider you choose</strong> (Anthropic, OpenAI, Google, OpenRouter, NVIDIA, or a custom OpenAI-compatible endpoint). You supply your own API key. The app sends requests directly from your device to the provider — never through our servers.</li>
-  <li>We never sell your data, never share it for advertising, and never use it to train AI models ourselves.</li>
-  <li>You can revoke AI consent, delete your API key, and export or wipe your local data at any time inside the app.</li>
-</ul>
-
-<h2>2. Data we collect and where it lives</h2>
-
-<h3>2.1 On-device only</h3>
-<p>The following data lives in encrypted-at-rest storage on your iPhone or iPad. None of it is uploaded to any HealthPilot-operated server (we do not run any).</p>
-<table>
-  <tr><th>Category</th><th>How collected</th><th>Where stored</th></tr>
-  <tr><td>Profile (name, age, gender, goals, declared health concerns, diet preference, activity level, medical conditions, medications)</td><td>You enter it during onboarding or in Settings</td><td>iOS AsyncStorage</td></tr>
-  <tr><td>Apple Health metrics (steps, sleep, calories, water, weight, BMI, heart rate, VO2 max, blood pressure, glucose, workouts, mindful minutes)</td><td>Read with your permission via Apple's HealthKit API</td><td>iOS SQLite (summarised daily values; raw HealthKit records remain in Apple's database, not ours)</td></tr>
-  <tr><td>Food logs (meals, photos, macros)</td><td>You log them manually or via Meal Snap</td><td>iOS SQLite + on-device files</td></tr>
-  <tr><td>Workouts</td><td>Imported from Apple Health, optionally with route + flyover videos</td><td>iOS SQLite + on-device files</td></tr>
-  <tr><td>Mood / energy check-ins, water intake, medicine and supplement logs</td><td>You enter manually</td><td>iOS SQLite</td></tr>
-  <tr><td>Health documents (lab reports, prescriptions, photos)</td><td>You upload them</td><td>On-device files; extracted text in SQLite</td></tr>
-  <tr><td>Chat conversations with the AI Coach</td><td>Generated as you chat</td><td>iOS SQLite</td></tr>
-  <tr><td>Custom instructions and AI memory items</td><td>You author them, or the app extracts durable facts from chats with your permission</td><td>iOS AsyncStorage</td></tr>
-  <tr><td>App preferences (theme, units, timezone, reminder settings, AI provider choice and API key)</td><td>You set them in Settings</td><td>iOS AsyncStorage</td></tr>
-</table>
-
-<h3>2.2 Data we do <em>not</em> collect</h3>
-<ul>
-  <li>We do not collect any analytics, telemetry, crash reports, or usage data.</li>
-  <li>We do not collect device identifiers (IDFA, advertising IDs).</li>
-  <li>We do not access your contacts, microphone, or location for any cloud-bound purpose. (Location is read on-device only when the optional 3D Flyover feature renders a workout route, and is never transmitted.)</li>
-  <li>We do not have a backend; HealthPilot operates no servers, no databases, and no logs.</li>
-</ul>
-
-<h2>3. Third-party AI services</h2>
-
-<p>The AI Coach, Meal Snap, and Document Analysis features send selected data to an AI provider <em>you</em> choose in <code>Settings → AI Coach</code>. You supply your own API key. Requests go <strong>directly from your device to the provider over HTTPS</strong>. HealthPilot does not proxy, cache, or log these requests.</p>
-
-<p>You will be asked to explicitly agree to this data sharing the first time the app launches (or after this policy materially changes). You can revoke consent at any time in <code>Settings → AI Coach → Data Sharing &amp; Privacy</code>; doing so immediately disables every AI feature.</p>
-
-<h3>3.1 Supported providers and endpoints</h3>
-<table>
-  <tr><th>Provider</th><th>API endpoint</th><th>Their privacy policy</th></tr>
-  <tr><td>Anthropic (Claude)</td><td>api.anthropic.com</td><td><a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a></td></tr>
-  <tr><td>OpenAI (GPT)</td><td>api.openai.com</td><td><a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a></td></tr>
-  <tr><td>Google (Gemini)</td><td>generativelanguage.googleapis.com</td><td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td></tr>
-  <tr><td>OpenRouter</td><td>openrouter.ai</td><td><a href="https://openrouter.ai/privacy">openrouter.ai/privacy</a></td></tr>
-  <tr><td>NVIDIA NIM</td><td>integrate.api.nvidia.com</td><td><a href="https://www.nvidia.com/en-us/about-nvidia/privacy-policy/">nvidia.com/en-us/about-nvidia/privacy-policy</a></td></tr>
-  <tr><td>Custom (user-supplied)</td><td>Your endpoint</td><td>Per your own configuration</td></tr>
-</table>
-
-<h3>3.2 What is sent to the provider</h3>
-<ul>
-  <li>Your chat messages, plus any photos or PDFs you upload.</li>
-  <li>Your profile fields (name, age, gender, goals, declared concerns, diet, activity level).</li>
-  <li>A summary of your day from Apple Health (steps, sleep, calories, water, exercise minutes, latest weight / BMI / vitals) and a 7-day trend.</li>
-  <li>Your food log roll-up and recent workouts.</li>
-  <li>Custom instructions and AI memory items you have authored or approved.</li>
-  <li>Names of any uploaded documents. Full extracted text of a document is sent only when you explicitly upload that document for analysis or chat about it.</li>
-</ul>
-
-<h3>3.3 What is <em>not</em> sent</h3>
-<ul>
-  <li>Raw HealthKit records — only the summarised values listed above.</li>
-  <li>Your API key — used only to authenticate the request; not included in the request body.</li>
-  <li>Other users' data — HealthPilot is single-user, on-device.</li>
-  <li>Anything you have not typed, uploaded, or logged.</li>
-</ul>
-
-<p>Each provider's privacy policy governs how they store, retain, and use the data they receive. Please review the provider's terms before agreeing.</p>
-
-<h2>4. Other third-party services</h2>
-<table>
-  <tr><th>Service</th><th>Purpose</th><th>Data sent</th></tr>
-  <tr><td>Apple HealthKit</td><td>Read health metrics</td><td>None — read-only on-device API</td></tr>
-  <tr><td>Apple App Store / iTunes Lookup</td><td>Check for new app versions</td><td>None — we read public version metadata for the app's bundle ID; no user identifiers are sent</td></tr>
-  <tr><td>Mapbox (only if 3D Flyover is enabled)</td><td>Render terrain tiles for workout flyover videos</td><td>Map tile coordinates only; no personal identifiers</td></tr>
-</table>
-
-<h2>5. How long we retain your data</h2>
-<p>All data lives on your device for as long as you keep the app installed. Deleting the app removes everything from device storage. There is nothing for us to retain on our end — we have no servers.</p>
-
-<h2>6. Your rights and choices</h2>
-<ul>
-  <li><strong>Disable AI features:</strong> Settings → AI Coach → "Disable AI Coach". Removes the consent and disables every AI call until you re-enable.</li>
-  <li><strong>Delete API key:</strong> Settings → AI Coach → "Remove saved key".</li>
-  <li><strong>Export your data:</strong> Settings → Backup &amp; Restore → "Export backup". Produces an encrypted bundle of your SQLite + preferences for you to keep.</li>
-  <li><strong>Wipe everything:</strong> Delete the app from your device. iOS will purge all app storage.</li>
-  <li><strong>Revoke HealthKit access:</strong> iOS Settings → Privacy &amp; Security → Health → HealthPilot → toggle scopes off.</li>
-</ul>
-
-<p>Because all data is on-device and never leaves it via our infrastructure, GDPR / CCPA "right to access" and "right to erasure" requests are fulfilled directly by you, on your device, using the controls above. If you have additional questions, email <a href="mailto:ai.healthpilot@gmail.com">ai.healthpilot@gmail.com</a>.</p>
-
-<h2>7. Children's privacy</h2>
-<p>HealthPilot is not directed to children under 13 (or under 16 in the EEA / UK). We do not knowingly collect data from such users. If a parent or guardian believes their child has used the app, please contact us at the email above and we will help confirm there is no on-device data we can access (we cannot — but we will guide them through deletion).</p>
-
-<h2>8. Security</h2>
-<p>On-device data is protected by iOS file-system encryption (Data Protection class). The API key you supply for AI features is stored in iOS-encrypted AsyncStorage and is only used as a request-authentication header. All network requests use HTTPS / TLS.</p>
-
-<h2>9. Medical disclaimer</h2>
-<p>HealthPilot's AI Coach is for informational and educational purposes only and is <strong>not a substitute for professional medical advice, diagnosis, or treatment</strong>. Always seek the advice of a qualified healthcare provider in addition to using this app and before making any medical decisions. Never disregard professional medical advice or delay seeking it because of something you have read in HealthPilot.</p>
-
-<h2>10. Changes to this policy</h2>
-<p>If we materially change what data is sent or who it is sent to, the next launch of the app will re-present the consent screen with the updated disclosure. The "Last updated" date at the top of this page reflects the most recent revision.</p>
-
-<h2>11. Contact</h2>
-<p>Questions, concerns, or requests? <a href="mailto:ai.healthpilot@gmail.com">ai.healthpilot@gmail.com</a></p>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0E0B1B" />
+    <title>Privacy Policy — HealthPilot</title>
+    <meta name="description" content="HealthPilot Privacy Policy — what data we collect, where it lives, and your rights." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-ink-950 text-white antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/privacy-main.tsx"></script>
+  </body>
 </html>
