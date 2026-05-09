@@ -7,6 +7,7 @@ import { ScreenShowcase } from "./components/ScreenShowcase";
 import { WorkoutsFlyover } from "./components/WorkoutsFlyover";
 import { HowItWorks } from "./components/HowItWorks";
 import { Privacy } from "./components/Privacy";
+import { BuilderCard } from "./components/BuilderCard";
 import { CTA } from "./components/CTA";
 
 export default function App() {
@@ -53,6 +54,7 @@ export default function App() {
       <WorkoutsFlyover />
       <HowItWorks />
       <Privacy />
+      <BuilderCard />
       <CTA />
     </Layout>
   );
