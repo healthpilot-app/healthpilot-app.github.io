@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { SectionHeader } from "./Features";
+import { Spotlight } from "./effects/Spotlight";
 
 const claims = [
   {
@@ -24,7 +25,11 @@ export function Privacy() {
   return (
     <section id="privacy" className="relative px-6 py-24 lg:px-10 lg:py-32">
       <div className="mx-auto max-w-6xl">
-        <div className="relative overflow-hidden rounded-[32px] border border-violet-400/20 bg-gradient-to-br from-violet-950/60 via-ink-900/60 to-ink-950/60 p-8 md:p-14">
+        <Spotlight
+          size={520}
+          fill="rgba(110,231,183,0.16)"
+          className="rounded-[32px] border border-violet-400/20 bg-gradient-to-br from-violet-950/60 via-ink-900/60 to-ink-950/60 p-8 md:p-14"
+        >
           <motion.div
             aria-hidden
             initial={{ opacity: 0 }}
@@ -95,7 +100,7 @@ export function Privacy() {
               <p className="text-white/45">Last updated 9 May 2026</p>
             </div>
           </div>
-        </div>
+        </Spotlight>
       </div>
     </section>
   );

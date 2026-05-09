@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { BrandMark } from "./BrandMark";
 import { PhoneFrame } from "./PhoneFrame";
+import { BackgroundBeams } from "./effects/BackgroundBeams";
+import { CardTilt } from "./effects/CardTilt";
 
 const APP_STORE_URL =
   "https://apps.apple.com/app/healthpilot-ai-health-coach/id6764634374";
@@ -17,6 +19,7 @@ const fadeUp = {
 export function Hero() {
   return (
     <section id="top" className="relative px-6 pb-24 pt-16 md:pt-24 lg:px-10 lg:pb-32">
+      <BackgroundBeams />
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         {/* Copy */}
         <div className="relative">
@@ -117,30 +120,32 @@ export function Hero() {
           className="relative mx-auto flex w-full max-w-[520px] items-center justify-center lg:max-w-none"
         >
           <HeroBackdrop />
-          <div className="relative z-10 flex items-center gap-4">
-            <PhoneFrame
-              src="/screens/02-score.png"
-              alt="HealthPilot home screen with daily score"
-              tilt={-6}
-              delay={0.4}
-              className="hidden md:block w-[220px]"
-            />
-            <PhoneFrame
-              src="/screens/03-coach.png"
-              alt="HealthPilot AI Coach chat"
-              tilt={4}
-              delay={0.55}
-              floating
-              className="z-20 w-[260px]"
-            />
-            <PhoneFrame
-              src="/screens/06-reports.png"
-              alt="HealthPilot weekly reports"
-              tilt={8}
-              delay={0.7}
-              className="hidden md:block w-[220px]"
-            />
-          </div>
+          <CardTilt maxTilt={8} glare={false} className="relative z-10">
+            <div className="flex items-center gap-4">
+              <PhoneFrame
+                src="/screens/02-score.png"
+                alt="HealthPilot home screen with daily score"
+                tilt={-6}
+                delay={0.4}
+                className="hidden md:block w-[220px]"
+              />
+              <PhoneFrame
+                src="/screens/03-coach.png"
+                alt="HealthPilot AI Coach chat"
+                tilt={4}
+                delay={0.55}
+                floating
+                className="z-20 w-[260px]"
+              />
+              <PhoneFrame
+                src="/screens/06-reports.png"
+                alt="HealthPilot weekly reports"
+                tilt={8}
+                delay={0.7}
+                className="hidden md:block w-[220px]"
+              />
+            </div>
+          </CardTilt>
           <FloatingChip
             text="Score 78 · improving"
             top="6%"
