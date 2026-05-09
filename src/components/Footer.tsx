@@ -16,6 +16,12 @@ export function Footer() {
 
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-white/60">
           <a
+            href="/about.html"
+            className="transition-colors hover:text-white"
+          >
+            About
+          </a>
+          <a
             href="/privacy.html"
             className="transition-colors hover:text-white"
           >
